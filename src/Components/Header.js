@@ -9,7 +9,7 @@ const Header = () => {
   const [searchartist, setsearchartist] = useState("");
 
   return (
-    <div className="flex justify-between items-center bg-red-400 px-5 py-3 text-white font-semibold text-xl pb-5">
+    <div className="flex justify-between items-center bg-red-400 px-5 py-3 text-white font-semibold text-xl pb-5 sticky top-0 ">
       <div className="">
         <img className="w-[9.5rem] h-[4rem] absolute top-0 left-[11px]" src={logo} alt="logo" />
       </div>

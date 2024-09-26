@@ -1,7 +1,6 @@
 import { useSelector } from "react-redux";
 import usegetArtists from "../Hooks/usegetArtists";
 import Artistcards from "./Artistcards";
-import { artistIds } from "../utils/constants";
 
 const Artists = () => {
   usegetArtists();
@@ -11,7 +10,7 @@ const Artists = () => {
   return (
     <div className="w-[98vw] mx-auto">
       <h2 className="font-bold text-2xl">Artists</h2>
-      <div className="flex overflow-x-auto whitespace-nowrap scrollbar-none">
+      <div className="flex overflow-x-auto whitespace-nowrap scrollbar-none bg-gray-100">
         {artists.length > 0 &&
           artists.map((artist) => (
             <Artistcards
