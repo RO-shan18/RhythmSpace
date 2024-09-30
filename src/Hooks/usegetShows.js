@@ -14,9 +14,6 @@ const useGetShows = ()=>{
                 Authorization : `Bearer ${store}`}
         })
         const json = await data.json();
-
-        console.log(json?.shows);
-
         dispatch(addShows(json?.shows));
         }
 

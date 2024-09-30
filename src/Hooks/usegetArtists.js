@@ -3,7 +3,7 @@ import { addartist } from "../utils/artistslice";
 import { useEffect } from "react";
 import { artistIds } from "../utils/constants";
 
-const usegetArtists = ()=>{
+const useGetArtists = ()=>{
     const dispatch = useDispatch();
     const store = useSelector((store)=> store.token.accesstoken);
 
@@ -23,4 +23,4 @@ const usegetArtists = ()=>{
     },[store])
 }
 
-export default usegetArtists;
+export default useGetArtists;
