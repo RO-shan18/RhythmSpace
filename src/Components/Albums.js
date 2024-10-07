@@ -6,6 +6,11 @@ const Albums = () => {
   useGetAlbums();
 
   const album = useSelector((store) => store?.album?.albumsarr);
+
+    // Check if albums is undefined or empty
+    if (!album || album.length === 0) {
+      return <p>No Albums available....</p>;
+    }
   
   return (
     <div className="w-[98vw] mx-auto">

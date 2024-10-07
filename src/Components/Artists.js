@@ -8,14 +8,17 @@ const Artists = () => {
 
   const artists = useSelector((store) => store?.artist?.artistarr);
 
+  if (!artists || artists.length === 0) {
+    return <p>No artists available....</p>;
+  }
+
   return (
     <div className="w-[98vw] mx-auto">
       <h2 className="font-bold text-2xl">Artists</h2>
       <div className="flex overflow-x-auto whitespace-nowrap scrollbar-none bg-gray-100">
         {artists.length > 0 &&
           artists.map((artist) => (
-            <Link to={"/artist/" + artist?.id}><Artistcards
-              key={artist?.id}
+            <Link to={"/artist/" + artist?.id} key={artist?.id}><Artistcards
               name={artist?.name}
               image={artist?.images}
               artistid={artist?.id}

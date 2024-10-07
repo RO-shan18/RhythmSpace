@@ -1,11 +1,21 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Albumsonglists from "./Albumsonglists";
 import { capitalizeFirstLetter } from "../utils/constants";
+import { addArtisttracks } from "../utils/Artisttrackslice";
+import { useEffect } from "react";
 
 const Albumsong = () => {
   const { albumid } = useParams();
   const album = useSelector((store) => store?.album?.albumsarr);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const selectedAlbum = album.find(item => item?.id === albumid);
+    if (selectedAlbum) {
+      dispatch(addArtisttracks(selectedAlbum?.tracks?.items));
+    }
+  }, [albumid, album, dispatch]);
 
   return (
     <div>

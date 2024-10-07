@@ -8,6 +8,8 @@ import {persistor, appStore} from "./utils/appStore"
 import Albumsong from "./Components/Albumsong";
 import Episodedetail from "./Components/Episodedetail";
 import Artistdetail from "./Components/Artistdetail";
+import Showdetail from "./Components/Showdetail";
+import Tracks from "./Components/Tracks";
 
 function App() {
   return (
@@ -42,6 +44,14 @@ export const approuter = createBrowserRouter([
       {
         path : "/artist/:artistid",
         element : <Artistdetail/>
+      },
+      {
+        path : "/shows/:showsid",
+        element : <Showdetail/>
+      },
+      {
+        path : "/track/:trackid",
+        element : <Tracks/>
       }
     ]
   }

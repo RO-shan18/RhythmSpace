@@ -8,18 +8,19 @@ export const ShowsIds = "ids=5hTbZWb0RUDAqJzWdndzkZ,30dtmFEHT0QMsOixP10VyK,7pe04
 
 export function Millis_To_MinSec(milliseconds) {
     const hours = Math.floor(milliseconds / 3600000); // Convert to hours
-    const minutes = Math.floor((milliseconds % 3600000) / 60000); // Remaining minutes
-    const seconds = Math.floor((milliseconds % 60000) / 1000); // Remaining seconds
+    const remainingMillisecondsAfterHours = milliseconds % 3600000;
+    const minutes = Math.floor(remainingMillisecondsAfterHours / 60000); // Remaining minutes
+    const remainingMillisecondsAfterMinutes = remainingMillisecondsAfterHours % 60000;
+    const seconds = Math.floor(remainingMillisecondsAfterMinutes / 1000); // Remaining seconds
 
     // Ensure minutes and seconds are always two digits
-    const formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
-    const formattedSeconds = seconds < 10 ? '0' + seconds : seconds;
+    const formattedMinutes = minutes.toString().padStart(2, '0');
+    const formattedSeconds = seconds.toString().padStart(2, '0');
 
-    if (hours > 0) {
-        return `${hours}:${formattedMinutes}:${formattedSeconds}`; // Return hours:minutes:seconds
-    } else {
-        return `${formattedMinutes}:${formattedSeconds}`; // Return minutes:seconds
-    }
+    // Return only hours:minutes:seconds
+    return hours > 0
+        ? `${hours}:${formattedMinutes}:${formattedSeconds}` // Return hours:minutes:seconds
+        : `${formattedMinutes}:${formattedSeconds}`; // Return minutes:seconds
 }
 
 export function capitalizeFirstLetter(str) {
@@ -36,3 +37,18 @@ export function FollowersConversion(num) {
         return num.toString(); // For numbers less than 1000
     }
 }
+
+export const months = {
+    "01": "Jan",
+  "02": "Feb",
+  "03": "Mar",
+  "04": "Apr",
+  "05": "May",
+  "06": "Jun",
+  "07": "Jul",
+  "08": "Aug",
+  "09": "Sep",
+  "10": "Oct",
+  "11": "Nov",
+  "12": "Dec"
+  };

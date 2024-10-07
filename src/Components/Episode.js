@@ -7,6 +7,10 @@ const Episode = () => {
 
   const Episode = useSelector((store) => store?.Episode?.Episodearr);
 
+  if (!Episode || Episode.length === 0) {
+    return <p>No Episode available....</p>;
+  }
+
   return (
     <div className="w-[98vw] mx-auto">
     <h2 className="font-bold text-2xl">Episodes</h2>

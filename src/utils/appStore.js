@@ -8,6 +8,8 @@ import artistreducer from "./artistslice";
 import albumreducer from "./albumSlice";
 import Episodesreducer from "./episodeslice";
 import Showsreducer from "./showslice";
+import Showsepisodereducer from "./showsepisodeslice";
+import Artisttracksreducer from "./Artisttrackslice";
 
 const persistconfig = {
     key : "root",
@@ -21,6 +23,8 @@ const reducer = combineReducers({
        album : albumreducer,
        Episode : Episodesreducer,
        Show : Showsreducer,
+       Showsepi : Showsepisodereducer,
+       Artisttrack : Artisttracksreducer,
 })
 
 const PersistReducer = persistReducer(persistconfig, reducer);

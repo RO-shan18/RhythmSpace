@@ -6,6 +6,7 @@ import { addShows } from "../utils/showslice";
 const useGetShows = ()=>{
     const dispatch = useDispatch();
     const store = useSelector((store)=> store.token.accesstoken);
+    const Show = useSelector(store => store?.Show?.Showsarr)
 
     const getShows = async()=>{
 

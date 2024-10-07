@@ -6,6 +6,7 @@ import { artistIds } from "../utils/constants";
 const useGetArtists = ()=>{
     const dispatch = useDispatch();
     const store = useSelector((store)=> store.token.accesstoken);
+    const artists = useSelector((store) => store?.artist?.artistarr);
 
     const getartist = async()=>{
 
