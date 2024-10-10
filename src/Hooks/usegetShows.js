@@ -19,7 +19,7 @@ const useGetShows = ()=>{
         }
 
     useEffect(()=>{
-        if(store) getShows();
+        if(!Show) getShows();
     },[store])
 }
 

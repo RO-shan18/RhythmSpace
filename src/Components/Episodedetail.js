@@ -6,10 +6,14 @@ import Music from "./Music";
 const Episodedetail = () => {
   const { episodeid } = useParams();
   const Episode = useSelector((store) => store?. Showsepi?.Showsepisodearr);
-  
+
   if (!Episode || Episode.length === 0) {
     return <p>No Episode available....</p>;
   }
+
+  console.log(episodeid)
+
+  console.log(Episode)
 
   return (
     <div>

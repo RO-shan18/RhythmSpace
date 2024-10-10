@@ -20,7 +20,7 @@ const useGetArtists = ()=>{
         }
 
     useEffect(()=>{
-        if(store) getartist();
+        if(!artists) getartist();
     },[store])
 }
 

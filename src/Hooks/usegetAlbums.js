@@ -23,7 +23,7 @@ const useGetAlbums = ()=>{
     }
 
     useEffect(()=>{
-       if(store) getAlbums(); 
+       if(!album) getAlbums(); 
     },[store])
 }
 

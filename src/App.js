@@ -10,6 +10,7 @@ import Episodedetail from "./Components/Episodedetail";
 import Artistdetail from "./Components/Artistdetail";
 import Showdetail from "./Components/Showdetail";
 import Tracks from "./Components/Tracks";
+import Searchresults from "./Components/Searchresults";
 
 function App() {
   return (
@@ -52,6 +53,10 @@ export const approuter = createBrowserRouter([
       {
         path : "/track/:trackid",
         element : <Tracks/>
+      },
+      {
+        path : "/search/:query",
+        element : <Searchresults/>
       }
     ]
   }

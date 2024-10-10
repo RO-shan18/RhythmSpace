@@ -22,7 +22,7 @@ const useGetEpisode = ()=>{
         }
 
     useEffect(()=>{
-        if(store) getEpisode();
+        if(!Episode) getEpisode();
     },[store])
 }
 
