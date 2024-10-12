@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Millis_To_MinSec } from "../utils/constants";
+import { Millis_To_MinSec } from "../../utils/constants";
 
 const Albumsonglists = ({ tracks }) => {
   return (

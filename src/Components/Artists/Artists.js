@@ -1,7 +1,6 @@
 import { useSelector } from "react-redux";
-import useGetArtists from "../Hooks/usegetArtists";
+import useGetArtists from "../../Hooks/usegetArtists";
 import Artistcards from "./Artistcards";
-import { Link } from "react-router-dom";
 
 const Artists = () => {
   useGetArtists();
@@ -18,12 +17,11 @@ const Artists = () => {
       <div className="flex overflow-x-auto whitespace-nowrap scrollbar-none bg-gray-100">
         {artists.length > 0 &&
           artists.map((artist) => (
-            <Link to={"/artist/" + artist?.id} key={artist?.id}><Artistcards
+            <Artistcards
               name={artist?.name}
               image={artist?.images}
-              artistid={artist?.id}
+              id={artist?.id}
             />
-            </Link>
           ))}
       </div>
     </div>

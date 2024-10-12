@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import useGetShows from "../Hooks/usegetShows";
+import useGetShows from "../../Hooks/usegetShows";
 import { Link } from "react-router-dom";
 
 const Shows = () => {

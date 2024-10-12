@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import useGetEpisode from "../Hooks/usegetEpisode";
+import useGetEpisode from "../../Hooks/usegetEpisode";
 import { Link } from "react-router-dom";
 
 const Episode = () => {

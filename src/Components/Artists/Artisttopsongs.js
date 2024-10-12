@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
-import useGetArtiststracks from "../Hooks/usegetArtiststracks";
-import { Millis_To_MinSec } from "../utils/constants";
+import useGetArtiststracks from "../../Hooks/usegetArtiststracks";
+import { Millis_To_MinSec } from "../../utils/constants";
 import { Link } from "react-router-dom";
 
 const Artisttopsongs = ({Followers})=>{

@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { capitalizeFirstLetter, Millis_To_MinSec } from "../utils/constants";
-import Music from "./Music";
+import { capitalizeFirstLetter, Millis_To_MinSec } from "../../utils/constants";
+import Music from "../Music";
 
 const Episodedetail = () => {
   const { episodeid } = useParams();

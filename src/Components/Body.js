@@ -1,10 +1,10 @@
 import { useEffect} from "react";
-import Artists from "./Artists";
+import Artists from "./Artists/Artists";
 import { useDispatch} from "react-redux";
 import { addaccesstoken } from "../utils/Tokenslice";
-import Albums from "./Albums";
-import Episode from "./Episode";
-import Shows from "./Shows";
+import Albums from "./Albums/Albums";
+import Episode from "./Episodes/Episode";
+import Shows from "./Shows/Shows";
 
 
 const Body = ()=>{

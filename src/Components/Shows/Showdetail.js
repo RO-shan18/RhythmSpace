@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { capitalizeFirstLetter, Millis_To_MinSec } from "../utils/constants";
+import { capitalizeFirstLetter, Millis_To_MinSec } from "../../utils/constants";
 import GetShowepisodes from "./getShowepisodes";
-import useGetShowsEpisode from "../Hooks/usegetShowsEpisode";
+import useGetShowsEpisode from "../../Hooks/usegetShowsEpisode";
 
 const Showdetail = () => {
   const { showsid } = useParams();

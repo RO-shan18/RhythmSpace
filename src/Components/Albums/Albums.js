@@ -1,12 +1,11 @@
 import { useSelector } from "react-redux";
-import useGetAlbums from "../Hooks/usegetAlbums";
-import { Link } from "react-router-dom";
+import useGetAlbums from "../../Hooks/usegetAlbums";
+import Albumcard from "./Albumcard";
 
 const Albums = () => {
   useGetAlbums();
 
   const album = useSelector((store) => store?.album?.albumsarr);
-
     // Check if albums is undefined or empty
     if (!album || album.length === 0) {
       return <p>No Albums available....</p>;
@@ -18,10 +17,7 @@ const Albums = () => {
       <div className="flex overflow-x-auto whitespace-nowrap scrollbar-none bg-gray-100 py-4">
         {album.length > 0 &&
           album.map((album) => (
-            <Link to={"/album/"+album?.id} key={album.id}><div className="px-4 cursor-pointer" >
-            <img className="w-[12vw] max-w-none rounded-lg" src={album?.images[0]?.url} alt="image" />
-            <p className="w-[12vw] overflow-hidden text-center font-semibold pt-1">{album?.name}</p>
-            </div></Link>
+              <Albumcard image={album?.images[0].url} name={album.name} id={album?.id}/>
           ))}
       </div>
     </div>

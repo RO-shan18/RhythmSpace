@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { capitalizeFirstLetter, FollowersConversion } from "../utils/constants";
-import useGetArtiststracks from "../Hooks/usegetArtiststracks";
+import { capitalizeFirstLetter, FollowersConversion } from "../../utils/constants";
+import useGetArtiststracks from "../../Hooks/usegetArtiststracks";
 import Artisttopsongs from "./Artisttopsongs";
 
 const Artistdetail = () => {

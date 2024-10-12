@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
-import useGetShowsEpisode from "../Hooks/usegetShowsEpisode";
-import { Millis_To_MinSec, months } from "../utils/constants";
-import play from "../assets/play.svg"
+import useGetShowsEpisode from "../../Hooks/usegetShowsEpisode";
+import { Millis_To_MinSec, months } from "../../utils/constants";
+import play from "../../assets/play.svg"
 import { Link } from "react-router-dom";
 
 const GetShowepisodes = () => {

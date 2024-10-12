@@ -37,8 +37,6 @@ const Header = () => {
       const json = await data.json();
 
       dispatch(addsearchresults(json));
-
-      console.log(searchcaching)
       
       dispatch(addsearch({ [searchquery]: [json]}));
   }

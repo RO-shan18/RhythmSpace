@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Albumsonglists from "./Albumsonglists";
-import { capitalizeFirstLetter } from "../utils/constants";
-import { addArtisttracks } from "../utils/Artisttrackslice";
+import { capitalizeFirstLetter } from "../../utils/constants";
+import { addArtisttracks } from "../../utils/Artisttrackslice";
 import { useEffect } from "react";
 
 const Albumsong = () => {

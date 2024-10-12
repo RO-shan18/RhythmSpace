@@ -5,12 +5,12 @@ import Header from "./Components/Header";
 import { createBrowserRouter, Outlet} from "react-router-dom";
 import { PersistGate } from "redux-persist/integration/react";
 import {persistor, appStore} from "./utils/appStore"
-import Albumsong from "./Components/Albumsong";
-import Episodedetail from "./Components/Episodedetail";
-import Artistdetail from "./Components/Artistdetail";
-import Showdetail from "./Components/Showdetail";
+import Albumsong from "./Components/Albums/Albumsong";
+import Episodedetail from "./Components/Episodes/Episodedetail";
+import Artistdetail from "./Components/Artists/Artistdetail";
+import Showdetail from "./Components/Shows/Showdetail";
 import Tracks from "./Components/Tracks";
-import Searchresults from "./Components/Searchresults";
+import Searchresults from "./Components/SearchBar/Searchresults";
 
 function App() {
   return (
