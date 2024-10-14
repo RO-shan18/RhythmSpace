@@ -15,11 +15,8 @@ const useGetArtiststracks = (id)=>{
         })
         const json = await data.json();
        
-        dispatch(addArtisttracks(json?.tracks));
-        
-        console.log(json?.tracks);
-        
-        }
+        dispatch(addArtisttracks(json?.tracks));   
+     }
 
     useEffect(()=>{
         if(store) getArtiststracks();

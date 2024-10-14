@@ -1,9 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 
-const Albumcard = ({image, name, id}) => {
-  return (
-    <Link to={"/album/" + id} key={id}>
-      <div className="px-4 cursor-pointer">
+const Playlistcard = ({image, name, id})=>{
+    return(
+        <Link to={"/Playlist/" + id} key={id}><div className="px-4 cursor-pointer" >
         <img
           className="w-[12vw] h-44 object-cover rounded-lg"
           src={image}
@@ -12,9 +11,8 @@ const Albumcard = ({image, name, id}) => {
         <p className="w-[12vw] overflow-hidden text-center font-semibold pt-1">
           {name}
         </p>
-      </div>
-    </Link>
-  );
-};
+      </div></Link>
+    )
+}
 
-export default Albumcard;
+export default Playlistcard;

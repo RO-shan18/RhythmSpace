@@ -8,9 +8,9 @@ const Artistcards = ({ name, image, id }) => {
     return null;
 
   return (
-    <Link to={"/artist/" + id} key={id}>
+   <Link to={"/artist/"+ id} key={id}>
     <div className="m-5 cursor-pointer">
-    <img className="max-w-none rounded-full" src={image[2]?.url} alt="artist image" />
+    <img className="max-w-none h-40 object-cover rounded-full" src={image[2]?.url} alt="artist image" />
       <p className="font-semibold pt-1">{name.split(",")[0]}</p>
     </div>
     </Link>

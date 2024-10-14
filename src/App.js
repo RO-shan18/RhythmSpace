@@ -1,8 +1,8 @@
-import { Provider } from "react-redux";
+import { Provider, useSelector } from "react-redux";
 import "./App.css";
 import Body from "./Components/Body";
 import Header from "./Components/Header";
-import { createBrowserRouter, Outlet} from "react-router-dom";
+import { createBrowserRouter, Outlet, useLocation} from "react-router-dom";
 import { PersistGate } from "redux-persist/integration/react";
 import {persistor, appStore} from "./utils/appStore"
 import Albumsong from "./Components/Albums/Albumsong";
@@ -11,6 +11,7 @@ import Artistdetail from "./Components/Artists/Artistdetail";
 import Showdetail from "./Components/Shows/Showdetail";
 import Tracks from "./Components/Tracks";
 import Searchresults from "./Components/SearchBar/Searchresults";
+import SearchArtistdetails from "./Components/SearchBar/searchresultsArtistdetail";
 
 function App() {
   return (
@@ -25,7 +26,14 @@ function App() {
   );
 }
 
+// const Artistroute = ()=>{
+//   const artist = useSelector(store => store?.Searchresults);
+
+//   return artist ? <SearchArtistdetails/> : <Artistdetail/>
+// }
+
 export const approuter = createBrowserRouter([
+  
   {
     path: "/",
     element : <App/>,
@@ -57,7 +65,7 @@ export const approuter = createBrowserRouter([
       {
         path : "/search/:query",
         element : <Searchresults/>
-      }
+      },
     ]
   }
 ])

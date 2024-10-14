@@ -18,6 +18,7 @@ const Artists = () => {
         {artists.length > 0 &&
           artists.map((artist) => (
             <Artistcards
+             key={artist?.id}
               name={artist?.name}
               image={artist?.images}
               id={artist?.id}

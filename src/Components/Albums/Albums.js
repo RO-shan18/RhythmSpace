@@ -17,7 +17,7 @@ const Albums = () => {
       <div className="flex overflow-x-auto whitespace-nowrap scrollbar-none bg-gray-100 py-4">
         {album.length > 0 &&
           album.map((album) => (
-              <Albumcard image={album?.images[0].url} name={album.name} id={album?.id}/>
+              <Albumcard key={album?.id} image={album?.images[0].url} name={album.name} id={album?.id}/>
           ))}
       </div>
     </div>

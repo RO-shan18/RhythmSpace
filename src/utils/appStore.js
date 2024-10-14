@@ -12,6 +12,8 @@ import Artisttracksreducer from "./Artisttrackslice";
 import Searchreducer from "./searchSlice";
 import Searchresultsreducer from "./searchresultSlice";
 
+import Trackreducer from "./trackslice";
+
 const persistconfig = {
     key : "root",
     storage
@@ -27,6 +29,7 @@ const reducer = combineReducers({
        Artisttrack : Artisttracksreducer,
        Searchresults : Searchresultsreducer,
        Search : Searchreducer,
+       Track : Trackreducer,
 })
 
 const PersistReducer = persistReducer(persistconfig, reducer);

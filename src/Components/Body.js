@@ -5,6 +5,7 @@ import { addaccesstoken } from "../utils/Tokenslice";
 import Albums from "./Albums/Albums";
 import Episode from "./Episodes/Episode";
 import Shows from "./Shows/Shows";
+import Track from "./Tracks/Track";
 
 
 const Body = ()=>{
@@ -39,6 +40,7 @@ const Body = ()=>{
             <Albums/>
             <Episode/>
             <Shows/>
+            <Track/>
         </div>
     )
 }   
