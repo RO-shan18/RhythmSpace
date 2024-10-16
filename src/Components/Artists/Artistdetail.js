@@ -2,7 +2,6 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import useGetArtiststracks from "../../Hooks/usegetArtiststracks";
 import Artistdetailcard from "./Artistdetailcards";
-import { FollowersConversion } from "../../utils/constants";
 
 const Artistdetail = () => {
   const { artistid } = useParams();

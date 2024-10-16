@@ -5,13 +5,15 @@ import Header from "./Components/Header";
 import { createBrowserRouter, Outlet, useLocation} from "react-router-dom";
 import { PersistGate } from "redux-persist/integration/react";
 import {persistor, appStore} from "./utils/appStore"
-import Albumsong from "./Components/Albums/Albumsong";
+import Albumdetails from "./Components/Albums/Albumdetails";
 import Episodedetail from "./Components/Episodes/Episodedetail";
 import Artistdetail from "./Components/Artists/Artistdetail";
 import Showdetail from "./Components/Shows/Showdetail";
 import Tracks from "./Components/Tracks";
 import Searchresults from "./Components/SearchBar/Searchresults";
-import SearchArtistdetails from "./Components/SearchBar/searchresultsArtistdetail";
+import SearchArtistdetails from "./Components/SearchBar/SRArtistdetail";
+import SearchAudiobookdetail from "./Components/SearchBar/SRAudiobookdetail";
+import SearchPlaylistdetails from "./Components/SearchBar/SRPlaylistdetail";
 
 function App() {
   return (
@@ -44,7 +46,7 @@ export const approuter = createBrowserRouter([
       },
       {
         path : "/album/:albumid",
-        element : <Albumsong/>
+        element : <Albumdetails/>
       },
       {
         path : "/episode/:episodeid",
@@ -65,6 +67,14 @@ export const approuter = createBrowserRouter([
       {
         path : "/search/:query",
         element : <Searchresults/>
+      },
+      {
+        path : "/audiobook/:audiobookid",
+        element : <SearchAudiobookdetail/>
+      },
+      {
+        path : "/playlist/:playlistid",
+        element : <SearchPlaylistdetails/>
       },
     ]
   }

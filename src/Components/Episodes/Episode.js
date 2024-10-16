@@ -1,12 +1,11 @@
 import { useSelector } from "react-redux";
 import useGetEpisode from "../../Hooks/usegetEpisode";
-import { Link } from "react-router-dom";
 import Episodecard from "./Episodecard";
 
 const Episode = () => {
   useGetEpisode();
 
-  const Episode = useSelector((store) => store?.Episode?.Episodearr);
+  const Episode = useSelector((store) => store?.Showsepi?.Showsepisodearr);
 
   if (!Episode || Episode.length === 0) {
     return <p>No Episode available....</p>;

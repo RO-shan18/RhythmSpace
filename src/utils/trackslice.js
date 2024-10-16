@@ -8,9 +8,13 @@ const Trackslice = createSlice({
     reducers : {
         addTrack : (state, action)=>{
             state.Trackarr = action.payload;
+        },
+
+        removeTrack :(state) =>{
+            state.Trackarr = "";
         }
     }
 })
 
-export const {addTrack} = Trackslice.actions;
+export const {addTrack, removeTrack} = Trackslice.actions;
 export default Trackslice.reducer;

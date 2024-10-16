@@ -16,10 +16,8 @@ const useGetShowsEpisode = (id)=>{
                 Authorization : `Bearer ${store}`}
         })
         const json = await data.json();
-        dispatch(addShowsepisodes(json?.items))
-        
-        console.log(json?.items);
-        
+
+        dispatch(addShowsepisodes(json?.items))     
         }
 
     useEffect(()=>{

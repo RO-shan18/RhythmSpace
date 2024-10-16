@@ -2,6 +2,11 @@ import { Link } from "react-router-dom";
 import { Millis_To_MinSec } from "../../utils/constants";
 
 const Albumsonglists = ({ tracks }) => {
+
+      if (!tracks || tracks.length === 0) {
+        return <p>No tracks available.</p>;
+    }
+
   return (
     <div className="mx-5 mb-5">
       {tracks.map((track, index) => (

@@ -8,9 +8,13 @@ const Showslice = createSlice({
     reducers : {
         addShows : (state, action)=>{
             state.Showsarr = action.payload;
+        },
+
+        removeshows : (state)=>{
+            state.Showsarr = "";
         }
     }
 })
 
-export const{addShows} = Showslice.actions;
+export const{addShows, removeshows} = Showslice.actions;
 export default Showslice.reducer;

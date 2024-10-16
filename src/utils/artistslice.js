@@ -8,9 +8,13 @@ const artistslice = createSlice({
     reducers : {
         addartist : (state, action)=>{
             state.artistarr = action.payload;
+        },
+
+        removeartist : (state)=>{
+            state.artistarr = "";
         }
     }
 })
 
-export const {addartist} = artistslice.actions;
+export const {addartist, removeartist} = artistslice.actions;
 export default artistslice.reducer;

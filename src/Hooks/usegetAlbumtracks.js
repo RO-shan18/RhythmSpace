@@ -2,24 +2,24 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addTrack } from "../utils/trackslice";
 
-const useGetArtiststracks = (id)=>{
+const useGetAlbumtracks = (id)=>{
     const dispatch = useDispatch();
     const store = useSelector((store)=> store.token.accesstoken);
 
-    const getArtiststracks = async()=>{
+    const getAlbumtracks = async()=>{
 
-        const data = await fetch("https://api.spotify.com/v1/artists/" + id + "/top-tracks" , {
+        const data = await fetch("https://api.spotify.com/v1/albums/" + id + "/tracks" , {
             headers: {
                 Authorization : `Bearer ${store}`}
         })
         const json = await data.json();
 
-        dispatch(addTrack(json?.tracks));
+        dispatch(addTrack(json?.items));
      }
 
     useEffect(()=>{
        let timer =  setTimeout(() => {
-            if(store) getArtiststracks();
+            if(store) getAlbumtracks();
         }, 200);
         
         return ()=>{
@@ -28,4 +28,4 @@ const useGetArtiststracks = (id)=>{
     },[store])
 }
 
-export default useGetArtiststracks;
+export default useGetAlbumtracks;

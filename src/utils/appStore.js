@@ -5,10 +5,8 @@ import storage from "redux-persist/lib/storage";
 import tokenreducer from "./Tokenslice";
 import artistreducer from "./artistslice";
 import albumreducer from "./albumSlice";
-import Episodesreducer from "./episodeslice";
 import Showsreducer from "./showslice";
 import Showsepisodereducer from "./showsepisodeslice";
-import Artisttracksreducer from "./Artisttrackslice";
 import Searchreducer from "./searchSlice";
 import Searchresultsreducer from "./searchresultSlice";
 
@@ -23,11 +21,9 @@ const reducer = combineReducers({
        token : tokenreducer,
        artist : artistreducer,
        album : albumreducer,
-       Episode : Episodesreducer,
        Show : Showsreducer,
        Showsepi : Showsepisodereducer,
-       Artisttrack : Artisttracksreducer,
-       Searchresults : Searchresultsreducer,
+       SearchResults : Searchresultsreducer,
        Search : Searchreducer,
        Track : Trackreducer,
 })

@@ -8,9 +8,13 @@ const Episodeslice = createSlice({
     reducers : {
         addEpisodes : (state, action)=>{
             state.Episodearr = action.payload;
+        },
+
+        removeEpisodes : (state)=>{
+            state.Episodearr = "";
         }
     }
 })
 
-export const{addEpisodes} = Episodeslice.actions;
+export const{addEpisodes, removeEpisodes} = Episodeslice.actions;
 export default Episodeslice.reducer;

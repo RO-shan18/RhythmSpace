@@ -30,13 +30,13 @@ const Header = () => {
   
   const getsearchresults = async()=>{
 
-      const data = await fetch("https://api.spotify.com/v1/search?q=" + searchquery + "&type=album,playlist,track,show,audiobook,episode,artist&limit=50", {
+      const data = await fetch("https://api.spotify.com/v1/search?q=" + searchquery + "&type=album,playlist,track,show,audiobook,episode,artist&limit=15", {
           headers: {
               Authorization : `Bearer ${store}`}
       })
       const json = await data.json();
 
-      dispatch(addsearchresults(json));
+      dispatch(addsearchresults(json))
       
       dispatch(addsearch({ [searchquery]: [json]}));
   }

@@ -18,13 +18,11 @@ const useGetTrack = ()=>{
 
         const json = await data.json();
 
-        console.log(json);
-
-        dispatch(addTrack(json));
+        dispatch(addTrack(json?.tracks));
     }
 
     useEffect(()=>{
-        if(!Track) getTrack();
+        if(store) getTrack();
     }, [store])
 }
 

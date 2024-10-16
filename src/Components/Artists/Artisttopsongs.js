@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Artisttopsongs = ({Followers})=>{
     useGetArtiststracks();
 
-    const TopTracks = useSelector(store => store?.Artisttrack?.Artisttracksarr);
+    const TopTracks = useSelector(store => store?.Track?.Trackarr);
 
     if (!TopTracks || TopTracks.length === 0) {
         return <p>No TopTracks available....</p>;

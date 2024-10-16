@@ -19,11 +19,10 @@ const useGetAlbums = ()=>{
         const json = await data.json();
 
         dispatch(addAlbums(json?.albums));
-        
     }
 
     useEffect(()=>{
-       if(!album) getAlbums(); 
+       if(store) getAlbums(); 
     },[store])
 }
 

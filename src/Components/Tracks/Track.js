@@ -5,7 +5,7 @@ import Trackcard from "./Trackcard";
 const Track = () => {
   useGetTrack();
 
-  const Track = useSelector((store) => store?.Track?.Trackarr?.tracks);
+  const Track = useSelector((store) => store?.Track?.Trackarr);
 
   if (!Track || Track.length === 0){
     return <p>No Track available....</p>

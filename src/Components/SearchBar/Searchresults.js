@@ -1,17 +1,35 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import SearchresultsAlbum from "./searchresultsAlbum";
-import SearchresultsArtists from "./searchresultsArtists";
-import SearchresultsEpisodes from "./searchresultsEpisodes";
-import SearchresultsShows from "./searchresultsShows";
-import SearchresultsPlaylist from "./searchresultsPlaylist";
-import SearchresultsAudiobooks from "./searchresultsaudiobooks";
-import SearchresultsTrack from "./searchresultstrack";
+import SearchresultsAlbum from "./SRAlbum";
+import SearchresultsArtists from "./SRArtists";
+import SearchresultsEpisodes from "./SREpisodes";
+import SearchresultsShows from "./SRShows";
+import SearchresultsPlaylist from "./SRPlaylist";
+import SearchresultsAudiobooks from "./SRaudiobooks";
+import SearchresultsTrack from "./SRtrack";
+import {addartist, removeartist} from "../../utils/artistslice"
+import { addAlbums, removeAlbums } from "../../utils/albumSlice";
+import { addEpisodes, removeEpisodes } from "../../utils/episodeslice";
+import { addShows, removeshows } from "../../utils/showslice";
+import { addTrack, removeTrack } from "../../utils/trackslice";
 
 const Searchresults = ()=>{
     const{query} = useParams();
 
-    const searchresults = useSelector(store => store?.Searchresults?.Searchresults)
+    const searchresults = useSelector(store => store?.SearchResults?.Searchresultarr)
+    const dispatch = useDispatch();
+
+    if(query.length === 0){
+        dispatch(removeartist());
+        dispatch(removeTrack());
+        dispatch(removeAlbums());
+    }
+    else{
+        dispatch(addartist(searchresults?.artists?.items));
+        dispatch(addAlbums(searchresults?.albums?.items));
+        dispatch(addTrack(searchresults?.tracks?.items));
+    }
+   
     
     console.log(searchresults)
     return (
