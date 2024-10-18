@@ -29,8 +29,6 @@ const Searchresults = ()=>{
         dispatch(addTrack(searchresults?.tracks?.items));
     }
    
-    
-    console.log(searchresults)
     return (
         <div>
             <SearchresultsArtists artists={searchresults?.artists?.items}/>

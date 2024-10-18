@@ -8,8 +8,6 @@ const Artisttopsongs = ({ Followers }) => {
 
   const TopTracks = useSelector((store) => store?.Track?.Trackarr);
 
-  console.log(TopTracks)
-
   if (!TopTracks || TopTracks.length === 0) {
     return <p>No TopTracks available....</p>;
   }

@@ -15,8 +15,6 @@ const useGetEpisode = ()=>{
         })
         const json = await data.json();
 
-        console.log(json?.episodes)
-
         dispatch(addShowsepisodes(json?.episodes))
         }
 

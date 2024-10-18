@@ -5,7 +5,7 @@ const Seekbar = ({ currentTime, duration, onSeek }) => {
   // Handle manual seeking
   const handleSeek = (e) => {
     const seekPosition = e.nativeEvent.offsetX / e.currentTarget.offsetWidth;
-    console.log(seekPosition)
+
     const newTime = seekPosition * duration;
     onSeek(newTime); // Pass the new time to the parent component
   };
