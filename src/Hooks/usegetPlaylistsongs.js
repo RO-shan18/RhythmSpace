@@ -8,15 +8,13 @@ const useGetPlaylistssongs = (id)=>{
 
     const getPlaylistssongs = async()=>{
 
-        const data = await fetch("https://api.spotify.com/v1/playlists/" + id ,{
+        const data = await fetch("https://api.spotify.com/v1/playlists/" + id + "/tracks",{
             headers: {
                 Authorization : `Bearer ${store}`}
         })
         const json = await data.json();
 
-        console.log(json);
-
-        dispatch(addTrack(json));
+        dispatch(addTrack(json?.items));
      }
 
     useEffect(()=>{

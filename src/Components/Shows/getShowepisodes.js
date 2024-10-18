@@ -18,14 +18,14 @@ const GetShowepisodes = () => {
 
   return (
     <div>
-        <h1 className="px-6 font-bold my-3 text-3xl bg-slate-400 mx-5 rounded-t-md py-2">All Episodes</h1>
-    <div className="flex flex-col gap-x-7 gap-y-5 flex-wrap justify-evenly items-center px-5 mx-5 py-4 bg-slate-300">
+        <h1 className="px-6 font-bold my-3 text-xl md:text-3xl bg-slate-400 mx-5 rounded-t-md py-2">All Episodes</h1>
+    <div className="flex flex-col gap-x-2 sm:gap-x-7 gap-y-5 flex-wrap justify-evenly items-start sm:items-center  px-1 sm:px-5 mx-5 py-2 sm:py-4 bg-slate-300">
       {showsepisodes.map((item) => (
         <Link to={"/episode/" + item?.id} key={item?.id}>
-          <div key={item.id} className="flex hover:bg-slate-200 p-5 rounded-md relative group">
-          <img className="w-[12vw] max-w-none rounded-lg hover:shadow-xl transition-all .4s ease-in-out" src={item.images[0].url} alt="episode thumbnail" />
-          <div className="flex flex-col w-[40vw] px-6 my-1 overflow-hidden whitespace-nowrap text-ellipsis">
-            <p className="text-xl font-semibold pb-2">{item?.name}</p>
+          <div key={item.id} className="flex hover:bg-slate-200 p-2 sm:p-5 rounded-md relative group">
+          <img className="w-24 sm:w-32 md:w-40 lg:w-48 max-w-none rounded-lg hover:shadow-xl transition-all .4s ease-in-out" src={item.images[0].url} alt="episode thumbnail" />
+          <div className="flex flex-col w-[50vw] sm:w-[40vw] px-6 my-1 overflow-hidden whitespace-nowrap text-ellipsis">
+            <p className="text-md sm:text-xl font-semibold pb-2">{item?.name}</p>
             <p className="h-[5vh] pb-2">{item?.description}</p>
             <p className="pb-2">{months[item?.release_date.split("-")[1]]} {item?.release_date.split("-")[0]}</p>
             <p className="pb-3">{Millis_To_MinSec(item?.duration_ms)}</p>

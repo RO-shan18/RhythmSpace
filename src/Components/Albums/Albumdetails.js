@@ -1,7 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import Albumsonglists from "./Albumsonglists";
-import { capitalizeFirstLetter } from "../../utils/constants";
 import { useEffect } from "react";
 import { addTrack } from "../../utils/trackslice";
 import useGetAlbumtracks from "../../Hooks/usegetAlbumtracks";
@@ -10,9 +8,12 @@ import Albumdetailcard from "./Albumdetailcard";
 const Albumsong = () => {
   const { albumid } = useParams();
   useGetAlbumtracks(albumid)
-
-  const album = useSelector((store) => store?.album?.albumsarr);
   const dispatch = useDispatch();
+  const album = useSelector((store) => store?.album?.albumsarr);
+
+  if(!album || album.length === 0){
+     <p>No albums are available</p>
+  }
 
   useEffect(() => {
     const selectedAlbum = album.find(item => item?.id === albumid);
@@ -21,6 +22,9 @@ const Albumsong = () => {
     }
   }, [albumid, album, dispatch]);
 
+  if(!album || album.length === 0){
+   return <p>No albums are available</p>
+ }
 
   return (
     <div>

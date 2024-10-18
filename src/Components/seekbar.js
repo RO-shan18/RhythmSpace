@@ -11,7 +11,7 @@ const Seekbar = ({ currentTime, duration, onSeek }) => {
   };
 
   return (
-    <div className="mx-8">
+    <div>
       <div
         className="h-[3px] rounded-lg border border-x-2 border-black relative cursor-pointer"
         onClick={handleSeek}

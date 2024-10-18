@@ -14,7 +14,8 @@ import Trackreducer from "./trackslice";
 
 const persistconfig = {
     key : "root",
-    storage
+    storage,
+    blacklist: ["largeStateSlice"], // Add slices of state you don't want to persist
 }
 
 const reducer = combineReducers({

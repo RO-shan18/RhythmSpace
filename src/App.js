@@ -11,8 +11,6 @@ import Artistdetail from "./Components/Artists/Artistdetail";
 import Showdetail from "./Components/Shows/Showdetail";
 import Tracks from "./Components/Tracks";
 import Searchresults from "./Components/SearchBar/Searchresults";
-import SearchArtistdetails from "./Components/SearchBar/SRArtistdetail";
-import SearchAudiobookdetail from "./Components/SearchBar/SRAudiobookdetail";
 import SearchPlaylistdetails from "./Components/SearchBar/SRPlaylistdetail";
 
 function App() {
@@ -67,10 +65,6 @@ export const approuter = createBrowserRouter([
       {
         path : "/search/:query",
         element : <Searchresults/>
-      },
-      {
-        path : "/audiobook/:audiobookid",
-        element : <SearchAudiobookdetail/>
       },
       {
         path : "/playlist/:playlistid",

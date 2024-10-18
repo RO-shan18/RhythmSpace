@@ -5,7 +5,6 @@ import SearchresultsArtists from "./SRArtists";
 import SearchresultsEpisodes from "./SREpisodes";
 import SearchresultsShows from "./SRShows";
 import SearchresultsPlaylist from "./SRPlaylist";
-import SearchresultsAudiobooks from "./SRaudiobooks";
 import SearchresultsTrack from "./SRtrack";
 import {addartist, removeartist} from "../../utils/artistslice"
 import { addAlbums, removeAlbums } from "../../utils/albumSlice";
@@ -39,7 +38,6 @@ const Searchresults = ()=>{
             <SearchresultsEpisodes Episodes={searchresults?.episodes?.items}/>
             <SearchresultsShows Shows={searchresults?.shows?.items}/>
             <SearchresultsPlaylist Playlists={searchresults?.playlists?.items}/>
-            <SearchresultsAudiobooks Audiobooks={searchresults?.audiobooks?.items}/>
             <SearchresultsTrack Tracks={searchresults?.tracks?.items}/>
         </div>
     )

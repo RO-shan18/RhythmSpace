@@ -5,6 +5,8 @@ import next from "../assets/next.svg";
 import pause from "../assets/pause.svg";
 import { Millis_To_MinSec } from "../utils/constants";
 import Seekbar from "./seekbar";
+import Volume from "../assets/volume.svg";
+import Mute from "../assets/mute.svg";
 
 const Music = ({ url, songname }) => {
   const refaudio = useRef(null); // Ref for the audio element
@@ -13,7 +15,10 @@ const Music = ({ url, songname }) => {
   const [currentTime, setCurrentTime] = useState(0); // Current time of the audio in ms
   const [volume, setVolume] = useState(1); // Volume state (default is 100%)
 
+  
+
   useEffect(() => {
+
     if (refaudio.current) {
       refaudio.current.pause();
       refaudio.current.currentTime = 0; // Reset the previous audio's currentTime to 0
@@ -66,45 +71,47 @@ const Music = ({ url, songname }) => {
     const newVolume = e.target.value;
     setVolume(newVolume); // Update volume state
     refaudio.current.volume = newVolume; // Set the audio element's volume
+
   };
 
+  const ToggleVolume = ()=>{
+  }
+
   return (
-    <div>
-      <div className="flex justify-between items-center bg-slate-300 mx-4 px-5 py-3 my-4 rounded-lg">
-        <div className="w-[30vw] text-xl">
-          <p>{songname}</p>
+    <div className="flex flex-col bg-slate-300 mx-4 px-5 py-3 my-4 rounded-lg">
+      <div className="flex sm:flex-row flex-col justify-between items-center sm:items-start">
+        <div className="w-[80vw] sm:w-[30vw] overflow-x-auto whitespace-nowrap scrollar-none text-md sm:text-lg lg:text-xl">
+          <marquee>{songname}</marquee>
         </div>
-        <div className="flex gap-x-5 mx-auto w-[30vw]">
-          <img className="w-[40px]" src={previous} alt="previous" onClick={HandlePrevious} />
+        <div className="flex gap-x-5 mx-auto sm:w-[30vw] w-[80vw] items-center sm:items-start justify-center sm:justify-start">
+          <img className="w-[30px] sm:w-[40px]" src={previous} alt="previous" onClick={HandlePrevious} />
           {isPlaying ? (
-            <img className="w-[45px]" src={pause} alt="pause" onClick={ToggleMusic} />
+            <img className="w-[35px] sm:w-[45px]" src={pause} alt="pause" onClick={ToggleMusic} />
           ) : (
-            <img className="w-[45px]" src={musicplay} alt="play" onClick={ToggleMusic} />
+            <img className="w-[35px] sm:w-[45px]" src={musicplay} alt="play" onClick={ToggleMusic} />
           )}
-          <img className="w-[40px]" src={next} alt="next" onClick={HandleNext} />
+          <img className="w-[30px] sm:w-[40px]" src={next} alt="next" onClick={HandleNext} />
         </div>
-        <div className="text-xl">
+        <div className="text-md sm:text-lg lg:text-xl">
           <p>{Millis_To_MinSec(currentTime)} / {Millis_To_MinSec(duration)}</p>
         </div>
       </div>
-
-      {/* Seekbar for progress */}
+      <div className=" mt-3">
       <Seekbar currentTime={currentTime} duration={duration} onSeek={handleSeek} />
-
-      {/* Volume control slider */}
-      <div className="flex items-center gap-2 mt-4">
-        <label htmlFor="volume">Volume: </label>
-        <input
-          id="volume"
-          type="range"
-          min="0"
-          max="1"
-          step="0.01"
-          value={volume}
-          onChange={handleVolumeChange}
-          className="w-[200px]"
-        />
-        <span>{Math.round(volume * 100)}%</span>
+        <div className="text-right mt-3 flex items-center justify-center sm:justify-normal">
+          <label htmlFor="volume"><img src={volume != 0 ? Volume : Mute} className="px-3 w-[40px] sm:w-auto" alt="volume" onClick={ToggleVolume} /></label>
+          <input
+            id="volume"
+            type="range"
+            min="0"
+            max="1"
+            step="0.01"
+            value={volume}
+            onChange={handleVolumeChange}
+            className="w-[100px]"
+          />
+          <span className="px-3">{Math.round(volume * 100)}</span>
+        </div>
       </div>
     </div>
   );
