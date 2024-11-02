@@ -7,7 +7,7 @@ const Episode = () => {
 
   const Episode = useSelector((store) => store?.Showsepi?.Showsepisodearr);
 
-  if (!Episode || Episode.length === 0) {
+  if (!Array.isArray(Episode) || Episode.length === 0) {
     return <p>No Episode available....</p>;
   }
 

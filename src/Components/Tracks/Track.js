@@ -7,10 +7,10 @@ const Track = () => {
 
   const Track = useSelector((store) => store?.Track?.Trackarr);
 
-  if (!Track || Track.length === 0){
-    return <p>No Track available....</p>
+  if (!Array.isArray(Track) || Track.length === 0) {
+    return <p>No Track available....</p>;
   }
-
+  
   return (
     <div className="w-[98vw] mx-auto">
       <h2 className="font-bold text-2xl">Tracks</h2>

@@ -8,10 +8,10 @@ const Shows = () => {
 
   const Show = useSelector(store => store?.Show?.Showsarr)
 
-  if (!Show || Show.length === 0) {
+  if (!Array.isArray(Show) || Show.length === 0) {
     return <p>No Show available....</p>;
   }
-
+  
   return (
     <div className="w-[98vw] mx-auto">
       <h2 className="font-bold text-2xl">Shows</h2>
