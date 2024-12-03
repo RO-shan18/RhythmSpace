@@ -5,9 +5,6 @@ import { addShowsepisodes } from "../utils/showsepisodeslice";
 const useGetShowsEpisode = (id)=>{
     const dispatch = useDispatch();
     const store = useSelector((store)=> store.token.accesstoken);
-    const showsepisodes = useSelector(
-        (store) => store?.Showsepi?.Showsepisodearr
-      );
 
     const getShowsEpisode = async()=>{
 

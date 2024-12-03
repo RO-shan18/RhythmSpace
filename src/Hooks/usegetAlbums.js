@@ -7,7 +7,6 @@ import { addAlbums } from "../utils/albumSlice";
 const useGetAlbums = ()=>{
 
     const store = useSelector((store)=> store.token.accesstoken);
-    const album = useSelector((store) => store?.album?.albumsarr);
     const dispatch = useDispatch();
     
     const getAlbums = async()=>{

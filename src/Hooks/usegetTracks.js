@@ -5,7 +5,6 @@ import { addTrack } from "../utils/trackslice";
 
 const useGetTrack = ()=>{
     const dispatch = useDispatch();
-    const Track = useSelector(store => store?.Track?.Trackarr);
     const store = useSelector((store)=> store.token.accesstoken);
     
     const getTrack = async()=>{
