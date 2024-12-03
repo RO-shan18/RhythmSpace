@@ -5,6 +5,7 @@ import { addTrack } from "../utils/trackslice";
 const useGetPlaylistssongs = (id)=>{
     const dispatch = useDispatch();
     const store = useSelector((store)=> store.token.accesstoken);
+    console.log(id)
 
     const getPlaylistssongs = async()=>{
 

@@ -6,20 +6,30 @@ const Episodedetail = () => {
   const { episodeid } = useParams();
   const Episode = useSelector((store) => store?.Showsepi?.Showsepisodearr);
 
-  if (!Episode || Episode.length === 0) {
+  if (!Episode || Episode?.length === 0) {
     return <p>No Episode available....</p>;
   }
 
+  console.log(Episode)
+
+  const currentEpisode = Episode.find((item) => item?.id === episodeid);
+
+  console.log(currentEpisode);
+
+  if (!currentEpisode) return <p>No data available for this episode...</p>;
+
   return (
     <div>
-      {Episode.length > 0 ? (Episode.map(
-        (item) =>
-          item.id === episodeid && (
-          <Episodedetailcard key={item.id} image={item?.images[0].url} type={item?.type} name={item?.name} date={item?.release_date} duration={item?.duration_ms} description={item} audio={item?.audio_preview_url}/>
-          )
-      )): (
-        <p>Loading!!!!</p>
-      )}
+      <Episodedetailcard
+        key={currentEpisode.id}
+        image={currentEpisode?.images?.[0]?.url}
+        type={currentEpisode?.type}
+        name={currentEpisode?.name}
+        date={currentEpisode?.release_date}
+        duration={currentEpisode?.duration_ms}
+        description={currentEpisode}
+        audio={currentEpisode?.audio_preview_url}
+      />
     </div>
   );
 };

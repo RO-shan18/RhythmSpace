@@ -2,32 +2,50 @@ import { useParams, useSearchParams } from "react-router-dom";
 import useGetPlaylistssongs from "../../Hooks/usegetPlaylistsongs";
 import PlaylistDetailcard from "./SRPlaylistdetailcard";
 import { useSelector } from "react-redux";
+import { current } from "@reduxjs/toolkit";
 
-const SearchPlaylistdetails = ()=>{
+const SearchPlaylistdetails = () => {
+ const { playlistid } = useParams();
 
-  const {playlistid} = useParams();
-
+  // Call the custom hook to fetch playlist songs
   useGetPlaylistssongs(playlistid);
 
-  const Playlistsong = useSelector(store => store?.SearchResults?.Searchresultarr?.playlists?.items)
+  // Access playlists from Redux store
+  const Playlistsong = useSelector(
+    (store) => store?.SearchResults?.Searchresultarr?.playlists?.items
+  );
 
-  if(!Playlistsong || Playlistsong.length===0)
-  return <p>No Songs are available...</p>
+  // Log for debugging purposes
+  console.log("Playlistsong:", Playlistsong);
 
-  return(
+  // Handle loading and no data cases
+  if (!Playlistsong) {
+    return <p>Loading...</p>;
+  }
+
+  if (Playlistsong.length === 0) {
+    return <p>No Songs are available...</p>;
+  }
+
+  // Find the specific playlist by ID
+  const currentPlaylist = Playlistsong.find((item) => item?.id === playlistid);
+
+  if (!currentPlaylist) {
+    return <p>No details available for the selected playlist.</p>;
+  }
+
+  return (
     <div>
-    {Playlistsong.length > 0 ? (
-      Playlistsong.map(
-        (item) =>
-          item.id === playlistid && (
-          <PlaylistDetailcard key={playlistid} image={item?.images[0].url} type={item?.type} name={item?.name} total={item?.tracks?.total} />
-          )
-      )
-    ) : (
-      <p>Loading....</p>
-  )}
-  </div>
-)
-}
+   
+            <PlaylistDetailcard
+              key={currentPlaylist?.id}
+              image={currentPlaylist?.images[0].url}
+              type={currentPlaylist?.type}
+              name={currentPlaylist?.name}
+              total={currentPlaylist?.tracks?.total}
+            />
+    </div>
+  );
+};
 
 export default SearchPlaylistdetails;

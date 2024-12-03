@@ -20,6 +20,7 @@ const useGetShows = ()=>{
 
     useEffect(()=>{
         if(store) getShows();
+
     },[store])
 }
 

@@ -21,6 +21,7 @@ const useGetArtists = ()=>{
 
     useEffect(()=>{
     if(store) getartist();
+
     },[store])
 }
 

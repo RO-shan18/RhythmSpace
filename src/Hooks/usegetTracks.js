@@ -23,6 +23,7 @@ const useGetTrack = ()=>{
 
     useEffect(()=>{
         if(store) getTrack();
+
     }, [store])
 }
 

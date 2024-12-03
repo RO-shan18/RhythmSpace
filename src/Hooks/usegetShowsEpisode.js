@@ -22,6 +22,7 @@ const useGetShowsEpisode = (id)=>{
 
     useEffect(()=>{
         if(store) getShowsEpisode();
+
     },[store])
 }
 
